@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 def index(request):
-    return HttpResponse('sunck is a good')
+    return render(request, 'myApp/index.html')
 
 def attri(request):
     print(request.path)
@@ -36,3 +36,45 @@ def regist(request):
     hobby = request.POST.getlist("hobby")
     print(name )
     return HttpResponse("SASD")
+##response
+def showresponse(request):
+    res = HttpResponse()
+    print(res.content)
+    print(res.charset)
+    print(res.status_code)
+    print(res.content-type)
+    return res
+#cookie
+def cookietest(request):
+    res = HttpResponse()
+    cookie = request.COOKIES
+    res.write("<h1>"+cookie["sunck"]+"</h1>")
+    #cookie = res.set_cookie('sunck','good')##向cookie中存放数据
+    return res
+#重定向,输入一的时候展示二的
+from django.http import HttpResponseRedirect,JsonResponse
+from django.shortcuts import redirect
+def redirect1(request):
+    #return HttpResponseRedirect('/sunck/redirect2')
+    return redirect('/sunck/redirect2')
+def redirect2(request):
+    return HttpResponse('我是重定向的视图')
+
+def main(request):
+    #取session
+    username = request.session.get('name','游客')##默认为空，将默认值设置为游客，找不大道就会返回游客
+    return render(request,'myApp/main.html',{'username':username})
+def login(request):
+    return render(request,'myApp/login.html')
+def showmain(request):
+    username = request.POST.get('username')
+    #存储session
+    request.session['name'] = username
+    request.session.set_expiry(10) ##十秒钟之后过期
+    return redirect('/sunck/main')
+from django.contrib.auth import logout
+def quit(request):
+    ##清楚session
+    logout(request)
+    ##或者使用request.session.flush()
+    return redirect('/sunck/main')

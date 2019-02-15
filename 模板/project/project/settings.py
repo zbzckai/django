@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5h5nge3608u&3b%+rm%%c3l%lkwq3*9#ty&!-8hbwt^nvu(rcb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -44,7 +44,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'view_data',#数据库名
+        'NAME':'muban_data',#数据库名
         'USER':'root',#用户名
         'PASSWORD':'qqxiaoKAI314',#数据库密码
         'HOST':'localhost',#数据库服务器的IP
@@ -123,10 +123,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
-##SESSION_ENGINE = 'redis_sessions.session'
-##SESSION_REDIS_HOST = 'localhost'
-##SESSION_REDIS_PORT = 6379
-##SESSION_REDIS_DB = 0
-##SESSION_REDIS_PASSWORD = 'sunck'
-##SESSION_REDIS_PREFIX = 'session'
