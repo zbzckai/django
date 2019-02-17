@@ -28,5 +28,12 @@
 <!--num/1*5-->
 <h1>num = {% widthratio num 1 5%}</h1>
 <h1>num = {% widthratio num 5 1%}</h1>
+<h1>{{code}}</h1>
+<h1>{{code|escape}}</h1>
+<h1>{{code|safe}}</h1>
+{%autoescape off%}
+<h1>{{code}}</h1>
+<h1>{{code}}</h1>
+{%endautoescape off%}
 </body>
 </html>
