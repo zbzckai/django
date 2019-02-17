@@ -18,5 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/$', admin.site.urls),
-    url(r'^', include('myApp.urls')),##先查找第一个，第一个返回的是admin，自动在django中已经生成了模板。
+    url(r'^', include('myApp.urls',namespace="app")),##先查找第一个，第一个返回的是admin，自动在django中已经生成了模板。
 ]

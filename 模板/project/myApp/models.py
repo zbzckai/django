@@ -14,4 +14,6 @@ class Students(models.Model):
     scontent = models.CharField(max_length=20)
     isDelete = models.BooleanField(default=False)
     ##g关联外键，学生要对应班级
-    sgrade = models.ForeignKey('Grades')
+    sgrade = models.ForeignKey('Grades',on_delete=models.CASCADE)
+    def getname(self):
+        return self.sname
