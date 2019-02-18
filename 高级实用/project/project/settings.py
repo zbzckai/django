@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'middleware.myApp.myMiddle.myMiddle',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'muban_data',#数据库名
+        'NAME':'gaoji_data',#数据库名
         'USER':'root',#用户名
         'PASSWORD':'qqxiaoKAI314',#数据库密码
         'HOST':'localhost',#数据库服务器的IP
@@ -121,6 +122,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+##静态文件
+STATIC_URL = '/static/'##  url图片中的src就是url
+##普通文件用js css
+STATICFILES_DIRS= [
+    os.path.join(BASE_DIR,'static')
+]
+MDEIA_ROOT = os.path.join(BASE_DIR,r'middleware\upfile')

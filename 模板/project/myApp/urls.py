@@ -15,6 +15,6 @@ urlpatterns = [
     url(r'^showinfo/$', views.showinfo),
     url(r'^verifycode/$', views.verifycode),
     url(r'^verifycodefile/$', views.verifycodefile),
-url(r'^verifycodecheck/$', views.verifycodecheck),
+    url(r'^verifycodecheck/$', views.verifycodecheck),
     url(r'^good/(\d+)/(\d+)/$', views.good, name='good'),
 ]
