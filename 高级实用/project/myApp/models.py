@@ -15,3 +15,7 @@ class Students(models.Model):
     isDelete = models.BooleanField(default=False)
     ##g关联外键，学生要对应班级
     sgrade = models.ForeignKey('Grades')
+##引入富文本，HTMLField大文本
+from tinymce.models import HTMLField
+class Text(models.Model):
+    str = HTMLField()

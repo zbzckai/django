@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myApp',
+    'tinymce',
+    'djcelery',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +131,14 @@ STATICFILES_DIRS= [
     os.path.join(BASE_DIR,'static')
 ]
 MDEIA_ROOT = os.path.join(BASE_DIR,r'middleware\upfile')
+##富文本,类似于文件编辑器上面的字符控制等
+TINYMCE_DEFAULT_CONFIG = {
+    'theme':'advanced',##模式
+    'width':600,
+    'height':400,
+}
+##celery配置
+import djcelery
+djcelery.setup_loader()#初始化
+BROKER_URL = 'redis://:sunck@127.0.01:6379/0'
+CELERY_IMPORTS = ('myApp.task')

@@ -28,3 +28,20 @@ def studentpage(request,pageid):
     return render(request,'myApp/studentpage.html',{'students':page})
 
 # return render(request,'myApp/savefile.html')
+def ajaxstudents(request):
+    return render(request,'myApp/ajaxstudents.html')
+from django.http import JsonResponse
+def studentsinfo(request):
+    stus = Students.objects.all()
+    list = []
+    for stu in stus:
+        list.append([stu.sname,stu.sage])
+    return JsonResponse({'data':list})
+def edit(request):
+    return render(request,'myApp/edit.html')
+import time
+from .task import suck
+def celery(request):
+    res=suck()
+    #任务逻辑
+    return JsonResponse({'status':'successful'})
