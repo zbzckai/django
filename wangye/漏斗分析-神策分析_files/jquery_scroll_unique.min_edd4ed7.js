@@ -1,0 +1,1 @@
+$.fn.scrollUnique=function(){return $(this).each(function(){var e="mousewheel";void 0!==document.mozHidden&&(e="DOMMouseScroll"),$(this).on(e,function(e){var i=this.scrollTop,t=this.scrollHeight,l=this.clientHeight,n=e.originalEvent.wheelDelta?e.originalEvent.wheelDelta:-(e.originalEvent.detail||0);(n>0&&n>=i||0>n&&-1*n>=t-l-i)&&(this.scrollTop=n>0?0:t,e.preventDefault())})})};
