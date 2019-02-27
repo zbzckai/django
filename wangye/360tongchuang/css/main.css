@@ -1,0 +1,64 @@
+#box{
+	width: 800px;
+	height: 1000px;
+	margin: 0 auto;
+	background-color: aliceblue;
+}
+#header1{
+	height: 32px;
+	color: #666;
+}
+#header2_ul>li{
+	width: 80px;
+	float: left;
+}
+#header2_ul>li>a{
+	text-align: center;
+}
+#header2_ul ul{
+	display: none;
+}
+#header2_ul>li:hover ul{
+	display: block;
+}
+#header3_img{
+	width: 6.25rem;
+	height: 2.25rem;
+	background-image: url(../img/tongchengtupiao.png);
+	background-size: 6.25rem 2.25rem;
+	/* 不设置快会显示不全 */
+}
+#header3_02>ul{
+	float: right;
+}
+#header3_02>ul>li{
+	width: 80px;
+	float: left;
+}
+#header3_02>ul>li{
+	text-align: center;
+}
+#kong{
+	width: 10px;
+	height: 40px;
+	
+}
+#inad{background-image: url(../img/main.png);
+width: 50rem;
+height: 10.625rem;
+background-size: 37.5rem 10.625rem;
+
+}
+
+/* 此处要用空格因为中间隔着一层ul */
+#inad li{
+	margin-top: 1px;
+	width: 100px;
+	height: 57px;
+	background-color: rgb(0,0,0,0.5);
+}
+#inad li a {
+	text-align: center;
+	width 20px;
+	height: 1.875rem;
+}

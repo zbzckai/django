@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#box1{
+			width: 300px;
+			height: 56.25rem;
+			background-color: yellow;
+			position: relative;
+			/* 如果子元素中有absoult则父元素中一定要有relative 不然定位就会存在相对位置与绝对位置的问题出现 */
+		}
+		#box2{
+			width: 50px;
+			height: 3.125rem;
+			background-color: forestgreen;
+			position: absolute;
+			left: 20px;
+			top: 1.875rem;
+		}
+		#box4{
+			width: 3.75rem;
+			height: 3.125rem;
+			background-color: black;
+			position: fixed;
+			left: 20.25rem;
+			bottom: 18.75rem;
+		}
+	</style>
+	</head>
+	<body>
+				<div id="box1">
+					<div id="box2">
+				
+			</div>
+		</div>
+<div id="box4">
+	
+</div>
+	</body>
+</html>

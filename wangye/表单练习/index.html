@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				background-color: azure;
+			}
+			#box{
+				width: 18.75rem;
+				height: 200px;
+				background-color: #F0FFFF;
+				margin: 0 auto;
+				/* 居中 */
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<form action="#" method="post">
+				<fieldset id="">
+					<legend>基本信息</legend>
+					<label for="name">姓名：</label>
+					<input type="text" name="name" id="name" value="" placeholder="请输入姓名"/>
+					<br />
+					<label for="age">年龄：</label>
+					<input type="text" name="age" id="age" value="" />
+					<br>
+					<label for="birthday">出生：</label>
+					<select id="birthday">
+						<option value ="">1</option>
+						<option value ="">2</option>
+						<option value ="">3</option>
+					</select>
+				</fieldset>
+				<fieldset id="">
+					<legend>其他信息</legend>
+					<span>你喜欢这个表单么</span>
+					<input type="radio" name="like1" id="like1" value="1" />
+					<label for="like1">喜欢</label>
+					<input type="radio" name="like2" id="like2" value="0" />
+					<label for="like2">不喜欢</label>
+					<span>你喜欢什么运动么</span>
+					<input type="checkbox" name="ch" id="ch1" value="1" />
+					<label for="ch1">money</label>
+					<input type="checkbox" name="ch" id="ch2" value="2" />
+					<label for="ch2">gir</label>
+					<span>你的建议</span>
+					<textarea rows="30" cols="30">
+					</textarea>
+					<br>
+					<input type="submit" name="" id="" value="确认提交" />
+				</fieldset>
+
+			</form>
+		</div>
+	</body>
+</html>
