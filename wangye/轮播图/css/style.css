@@ -1,0 +1,42 @@
+*{margin: 0;
+padding: 0;}
+#box{
+	width: 590px;
+	height: 470px;
+	/* 居中了 */
+	margin: 0 auto;
+position: relative;
+}
+.bt{
+	position: absolute;
+	width: 50px;
+	height: 80px;
+	background-color: rgba(0,0,0,0.2);
+	color: #fff;
+	font-size: 30px;
+	text-align: center;
+	line-height: 80px;
+	top: 200px;
+	display: none;
+}
+#left{
+	left: 670px;
+}
+#right{right: 670px;}
+
+#list{
+	list-style: none;
+	position: absolute;
+	bottom: 20px;
+	left: 250px;
+}
+#list li{
+	float: left;
+	width: 20px;
+	height: 20px;
+	background-color: #aaa;
+	margin-left: 10px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 20px;
+}
