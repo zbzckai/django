@@ -1,0 +1,16 @@
+insert into myapp_grades(gname,gdate,ggirlnum,gboynum,isDelete) values("python01","2017-2-4",10,50,0),
+("python02","2017-2-4",11,50,0),
+("python03","2017-3-4",12,50,0),
+("python04","2017-4-4",13,50,0);
+insert into myapp_students(sname,sgender,scontent,isDelete,sgrade_id,sage) values("zhang",0,"wojiaozhang",0,1,20),
+("zhang",0,"wojiaozhang",1,1,20),
+("zhang1",0,"wojiaozhang1",1,1,20),
+("zhang2",0,"wojiaozhang2",0,2,20),
+("zhang3",0,"wojiaozhang3",0,3,20),
+("zhang4",0,"wojiaozhang4",0,4,20),
+("zhong",0,"wojiaozhong",0,1,20),
+("zhong1",0,"wojiaozhong1",0,1,20),
+("zhong2",0,"wojiaozhong2",0,2,20),
+("zhong3",0,"wojiaozhong3",0,3,20),
+("zhong4",0,"wojiaozhong4",0,4,20)
+;

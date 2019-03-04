@@ -4,7 +4,7 @@
 # @File    : urls.py
 from django.conf.urls import url
 from . import views
-
+app_name='axf'
 urlpatterns = [
     url(r'home/$', views.home, name='home'),
     url(r'^market/$', views.market, name='market'),
