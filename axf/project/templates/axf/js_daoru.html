@@ -1,0 +1,35 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>常用的数据统计图</title>
+
+<link type="text/css" rel="stylesheet" href="./css/index.css" />
+</head>
+<body>
+
+<p style="text-align: center">环形统计图</p>
+<div id="ring" style="width:450px;height:164px;margin: 0 auto"></div>
+
+<p>折线统计图</p>
+<div id="line" style="width:822px;height:492px;"></div>
+
+<p>柱状统计图1</p>
+<div id="pillar1" style="width:838px;height:305px;"></div>
+
+<p>柱状统计图2</p>
+<div id="pillar2" style="width:838px;height:305px;"></div>
+
+<div class="null"></div>
+<script>
+var MyViewVar = {
+  var_1: {{ name|safe }},
+  var_2: {{ data|safe }},
+};
+</script>
+<script type="text/javascript" src="{% static 'main/js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'home/js/echarts.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'main/js/index.js' %}"></script>
+</body>
+</html>

@@ -8,6 +8,9 @@
     <script type="text/javascript" charset="utf-8" src="{% static 'home/js/echarts.min.js' %}"></script>
 </head>
 <body>
+<div img="{% static 'cart/img/nybj.png' %}">
+<div>{{ wheelsList}}</div>
+<div>{{ data }}</div>
 <div style="width: 200px;height: 200px">
             <ul>
             {% for item in wheelsList %}
@@ -18,13 +21,10 @@
             </li>
             {% endfor %}
         </ul>
-</div>
-    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="width: 600px;height:400px;"></div>
+<div id="main" style="width: 600px;height:400px;"></div>
     <script type="text/javascript">
-        var name = {{ wheelsList.name }}
+
         // 基于准备好的dom，初始化echarts实例
-        var data = {{ wheelsList.trackid }}
         console.log(name)
         var myChart = echarts.init(document.getElementById('main'));
 
@@ -38,18 +38,21 @@
                 data:['销量']
             },
             xAxis: {
-                data: name
+                data: {{ name|safe }}
             },
             yAxis: {},
             series: [{
                 name: '销量',
                 type: 'bar',
-                data: data
+                data:{{ data|safe }}
             }]
         };
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
     </script>
+</div>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+</div>
 </body>
 </html>
