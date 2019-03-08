@@ -13,4 +13,3 @@ class Nav(models.Model):
 class test_table(models.Model):
     name = models.CharField(max_length=20)
     value = models.CharField(max_length=20)
-

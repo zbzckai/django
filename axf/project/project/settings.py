@@ -24,9 +24,7 @@ SECRET_KEY = '0$ucg86l)_305$81c^d@p4k6-4%e1j@j5b%3u$&d63v(^km$k4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['192.168.40.236', 'localhost', '127.0.0.1','23d9050d54.zicp.vip']
 
 # Application definition
 

@@ -1,0 +1,77 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/reset.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}"/>
+
+</head>
+<body>
+
+<div id="header1">
+
+</div>
+<div id="nav">
+
+    <ul id="header2_ul">
+        <li><a href="#">登录</a></li>
+        <li><a href="#">注册</a></li>
+        <li><a href="#">我的订单</a></li>
+        <li><a href="#">在线客服</a></li>
+        <li><a href="#">论坛</a></li>
+        <li><a href="#">投诉建议</a></li>
+        <li id="lili"><a href="#">电话</a>
+            <ul>
+                <li>110</li>
+                <li>119</li>
+                <li>120</li>
+            </ul>
+        </li>
+
+    </ul>
+
+</div>
+</div>
+<div id="main">
+    <div id="biaoti1">
+        <div class="wrapper">
+            <div class="search">
+                <input class="search-box" type="text" placeholder="请输入用户名">
+                <p>
+                    <span sex="m">男</span>
+                    <span sex="f">女</span>
+                    <span sex="a" class="active">All</span>
+                </p>
+            </div>
+            <div class="user-list">
+                <ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="table1">
+
+    </div>
+    <div id="biaoti2">
+
+    </div>
+    <div id="biaoti3">
+
+    </div>
+    <div id="pacture1">
+
+    </div>
+    <div id="pacture2">
+
+    </div>
+
+</div>
+<script type="text/javascript" src="{% static '/js/echarts.min.js' %}"></script>
+<script type="text/javascript" src="{% static '/js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static '/js/index.js' %}"></script>
+{#<script type="text/javascript" src="{% static '/js/script.js' %}"></script>#}
+</body>
+</html>
