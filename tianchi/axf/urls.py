@@ -8,5 +8,5 @@ app_name='axf'
 urlpatterns = [
 
     url(r'^index/$', views.index, name='market'),
-
+    url(r'^index/select_stu/$',views.select_stu,name = 'select_stu'),
 ]

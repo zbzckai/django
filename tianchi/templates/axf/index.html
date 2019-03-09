@@ -36,20 +36,48 @@
 </div>
 <div id="main">
     <div id="biaoti1">
-        <div class="wrapper">
-            <div class="search">
-                <input class="search-box" type="text" placeholder="请输入用户名">
-                <p>
-                    <span sex="m">男</span>
-                    <span sex="f">女</span>
-                    <span sex="a" class="active">All</span>
-                </p>
-            </div>
-            <div class="user-list">
-                <ul>
-                </ul>
-            </div>
-        </div>
+	<form action="/index/select_stu/" class="myform" method="post">
+		<div class="oneList">
+			<label for="UserName">姓名</label>
+			<input type="text" name="UserName" id="UserName" placeholder="请输入手机号码"/>
+		</div>
+		<div class="oneList">
+			<label for="RePassword">学年</label>
+			<select name="know" required>
+				<option value="">==请选择==</option>
+				<option value="1">搜索引擎</option>
+					<option value="2">朋友圈</option>
+					<option value="3">朋友推广</option>
+					<option value="4">广告投放</option>
+                <option value="5">所有</option>
+			</select>
+		</div>
+        		<div class="oneList">
+			<label for="RePassword">学科</label>
+			<select name="know" required>
+				<option value="">==请选择==</option>
+				<option value="1">搜索引擎</option>
+					<option value="2">朋友圈</option>
+					<option value="3">朋友推广</option>
+					<option value="4">广告投放</option>
+                <option value="5">所有</option>
+			</select>
+		</div>
+        		<div class="oneList">
+			<label for="RePassword">了解方式</label>
+			<select name="know" required>
+				<option value="">==请选择==</option>
+				<option value="1">搜索引擎</option>
+					<option value="2">朋友圈</option>
+					<option value="3">朋友推广</option>
+					<option value="4">广告投放</option>
+                <option value="5">所有</option>
+			</select>
+		</div>
+		<div class="oneList">
+			<input type="submit" value="提交">
+		</div>
+	</form>
     </div>
 
     <div id="table1">
