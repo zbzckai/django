@@ -122,8 +122,7 @@ line.setOption({
     xAxis:  {
         type: 'category',
         boundaryGap: false,
-        data: ['语言','词汇','词汇1','词汇2','词汇3','词汇4',
-            '词汇5','词汇6','词汇7','词汇8','词汇9','词汇10'],
+        data: MyViewVar.var_1,
         axisLabel: {
             interval:0
         }
@@ -135,7 +134,7 @@ line.setOption({
         {
             name:'成绩',
             type:'line',
-            data: [74, 62, 56, 79, 80, 30, 55, 35, 38, 41, 75, 89],
+            data: MyViewVar.var_2,
             markLine: {data: [{type: 'average', name: '平均值'}]}
         }
     ]

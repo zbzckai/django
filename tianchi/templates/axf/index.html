@@ -39,7 +39,7 @@
 	<form action="/index/select_stu/" class="myform" method="post">
 		<div class="oneList">
 			<label for="UserName">姓名</label>
-			<input type="text" name="UserName" id="UserName" placeholder="请输入手机号码"/>
+			<input type="text" name="UserName" id="UserName" placeholder="丁某某"/>
 		</div>
 		<div class="oneList">
 			<label for="RePassword">学年</label>
@@ -55,8 +55,8 @@
         		<div class="oneList">
 			<label for="RePassword">学科</label>
 			<select name="know" required>
-				<option value="">==请选择==</option>
-				<option value="1">搜索引擎</option>
+				<option value="">物理</option>
+				<option value="1">物理</option>
 					<option value="2">朋友圈</option>
 					<option value="3">朋友推广</option>
 					<option value="4">广告投放</option>
@@ -97,6 +97,12 @@
     </div>
 
 </div>
+<script>
+var MyViewVar = {
+  var_1: {{ exam_numname|safe }},
+  var_2: {{ mes_T_Score|safe }},
+};
+</script>
 <script type="text/javascript" src="{% static '/js/echarts.min.js' %}"></script>
 <script type="text/javascript" src="{% static '/js/jquery-3.1.1.min.js' %}"></script>
 <script type="text/javascript" src="{% static '/js/index.js' %}"></script>
