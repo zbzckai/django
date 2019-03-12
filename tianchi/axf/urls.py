@@ -6,7 +6,7 @@ from django.conf.urls import url
 from . import views
 app_name='axf'
 urlpatterns = [
-
     url(r'^index/$', views.index, name='market'),
     url(r'^index/select_stu/$',views.select_stu,name = 'select_stu'),
+    url(r'^index/regist/$', views.regist, name='regist'),
 ]

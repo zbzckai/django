@@ -95,48 +95,65 @@ ring.setOption({
 
 //折线图
 var line = echarts.init(document.getElementById('pacture1'));
-line.setOption({
-    color:["#32d2c9"],
+line.setOption( {
     title: {
-        x: 'left',
-        text: '成绩统计',
-        textStyle: {
-            fontSize: '18',
-            color: '#4c4c4c',
-            fontWeight: 'bolder'
-        }
+        text: '折线图堆叠'
     },
     tooltip: {
         trigger: 'axis'
     },
+    legend: {
+        data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
     toolbox: {
-        show: true,
         feature: {
-            dataZoom: {
-                yAxisIndex: 'none'
-            },
-            dataView: {readOnly: false},
-            magicType: {type: ['line', 'bar']}
+            saveAsImage: {}
         }
     },
-    xAxis:  {
+    xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: ['语言','词汇','词汇1','词汇2','词汇3','词汇4',
-            '词汇5','词汇6','词汇7','词汇8','词汇9','词汇10'],
-        axisLabel: {
-            interval:0
-        }
+        data: ['周一','周二','周三','周四','周五','周六','周日']
     },
     yAxis: {
         type: 'value'
     },
     series: [
         {
-            name:'成绩',
+            name:'邮件营销',
             type:'line',
-            data: [74, 62, 56, 79, 80, 30, 55, 35, 38, 41, 75, 89],
-            markLine: {data: [{type: 'average', name: '平均值'}]}
+            stack: '总量',
+            data:[120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+            name:'联盟广告',
+            type:'line',
+            stack: '总量',
+            data:[220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+            name:'视频广告',
+            type:'line',
+            stack: '总量',
+            data:[150, 232, 201, 154, 190, 330, 410]
+        },
+        {
+            name:'直接访问',
+            type:'line',
+            stack: '总量',
+            data:[320, 332, 301, 334, 390, 330, 320]
+        },
+        {
+            name:'搜索引擎',
+            type:'line',
+            stack: '总量',
+            data:[820, 932, 901, 934, 1290, 1330, 1320]
         }
     ]
 }) ;

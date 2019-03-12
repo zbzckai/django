@@ -192,30 +192,105 @@ pillar1.setOption({
 
 
 //柱状图2
-var pillar2 = echarts.init(document.getElementById('pillar2'));
+var pillar2 = echarts.init(document.getElementById('pacture3'));
+
+pillar2.setOption(option = {
+    legend: {},
+    tooltip: {},
+    dataset: {
+        source: [
+            ['product', '2012', '2013', '2014', '2015'],
+            ['Matcha Latte', 41.1, 30.4, 65.1, 53.3],
+            ['Milk Tea', 86.5, 92.1, 85.7, 83.1],
+            ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4]
+        ]
+    },
+    xAxis: [
+        {type: 'category', gridIndex: 0},
+        {type: 'category', gridIndex: 1}
+    ],
+    yAxis: [
+        {gridIndex: 0},
+        {gridIndex: 1}
+    ],
+    grid: [
+        {bottom: '55%'},
+        {top: '55%'}
+    ],
+    series: [
+        // These series are in the first grid.
+        {type: 'bar', seriesLayoutBy: 'row'},
+        {type: 'bar', seriesLayoutBy: 'row'},
+        {type: 'bar', seriesLayoutBy: 'row'},
+        // These series are in the second grid.
+        {type: 'bar', xAxisIndex: 1, yAxisIndex: 1},
+        {type: 'bar', xAxisIndex: 1, yAxisIndex: 1},
+        {type: 'bar', xAxisIndex: 1, yAxisIndex: 1},
+        {type: 'bar', xAxisIndex: 1, yAxisIndex: 1}
+    ]
+});
+
+//柱状图2
+var pillar2 = echarts.init(document.getElementById('pacture4'));
 pillar2.setOption({
-    color:["#00afff"],
-    tooltip : {
+    title: {
+        text: '折线图堆叠'
+    },
+    tooltip: {
         trigger: 'axis'
     },
-    calculable : true,
-    xAxis : [
-        {
-            type : 'category',
-            data : ['语言','词汇','词汇1','词汇2','词汇3','词汇4',
-            '词汇5','词汇6','词汇7']
+    legend: {
+        data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
         }
-    ],
-    yAxis : [
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['周一','周二','周三','周四','周五','周六','周日']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [
         {
-            type : 'value'
-        }
-    ],
-    series : [
+            name:'邮件营销',
+            type:'line',
+            stack: '总量',
+            data:[120, 132, 101, 134, 90, 230, 210]
+        },
         {
-            name:'您的班级',
-            type:'bar',
-            data:[74, 62, 56, 79, 80, 30, 55, 35, 38]
+            name:'联盟广告',
+            type:'line',
+            stack: '总量',
+            data:[220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+            name:'视频广告',
+            type:'line',
+            stack: '总量',
+            data:[150, 232, 201, 154, 190, 330, 410]
+        },
+        {
+            name:'直接访问',
+            type:'line',
+            stack: '总量',
+            data:[320, 332, 301, 334, 390, 330, 320]
+        },
+        {
+            name:'搜索引擎',
+            type:'line',
+            stack: '总量',
+            data:[820, 932, 901, 934, 1290, 1330, 1320]
         }
     ]
 });

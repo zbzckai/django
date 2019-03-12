@@ -9,103 +9,123 @@
 
 </head>
 <body>
+<div id="box">
+    <div id="header1">
+        <img src="{% static '/img/title.png' %}" id="pic">
+    </div>
+    <div id="nav">
 
-<div id="header1">
+        <ul id="header2_ul">
+            <li><a href="#">登录</a></li>
+            <li><a href="#">注册</a></li>
+            <li><a href="#">我的订单</a></li>
+            <li><a href="#">在线客服</a></li>
+            <li><a href="#">论坛</a></li>
+            <li><a href="#">投诉建议</a></li>
+            <li id="lili"><a href="#">电话</a>
+                <ul>
+                    <li>110</li>
+                    <li>119</li>
+                    <li>120</li>
+                </ul>
+            </li>
 
-</div>
-<div id="nav">
+        </ul>
 
-    <ul id="header2_ul">
-        <li><a href="#">登录</a></li>
-        <li><a href="#">注册</a></li>
-        <li><a href="#">我的订单</a></li>
-        <li><a href="#">在线客服</a></li>
-        <li><a href="#">论坛</a></li>
-        <li><a href="#">投诉建议</a></li>
-        <li id="lili"><a href="#">电话</a>
-            <ul>
-                <li>110</li>
-                <li>119</li>
-                <li>120</li>
+    </div>
+
+    <div id="main">
+        <div id="biaoti1">
+            <form action="/index/" class="myform" method="post">
+                <div class="oneList">
+                    <label for="UserName">姓名</label>
+                    <input type="text" name="UserName" id="UserName" value={{ StudentID }} placeholder={{ StudentID }}>
+                </div>
+                <div class="oneList">
+                    <label for="RePassword">学年</label>
+                    <select name="grade" required>
+                        <option value="0">==请选择==</option>
+                        <option value="1">搜索引擎</option>
+                        <option value="2">朋友圈</option>
+                        <option value="3">朋友推广</option>
+                        <option value="4">广告投放</option>
+                        <option value="5">所有</option>
+                    </select>
+                </div>
+                <div class="oneList">
+                    <label for="RePassword">学科</label>
+                    <select name="subject" required>
+                        <option value={{ mes_sub_name }}>{{ mes_sub_name }}</option>
+                        {% for mes_name in subject_list %}
+                            <option value={{ mes_name }}>{{ mes_name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="oneList">
+                    <label for="RePassword">了解方式</label>
+                    <select name="other" required>
+                        <option value="0">{{ StudentID }}</option>
+                        <option value="1">搜索引擎</option>
+                        <option value="2">朋友圈</option>
+                        <option value="3">朋友推广</option>
+                        <option value="4">广告投放</option>
+                        <option value="5">所有</option>
+                    </select>
+                </div>
+                <div class="oneList">
+                    <input type="submit" value="提交">
+                </div>
+            </form>
+        </div>
+
+        <div id="info">
+            <ul class="list">
+                {% for index in student_info_name %}
+                    <li class="columnhead">{{ index }}:</li>
+                {% endfor %}
+                {% for index in student_info_value %}
+                    <li>{{ index }}</li>
+                {% endfor %}
             </ul>
-        </li>
 
-    </ul>
+        </div>
+
+        <div id="table1">
+
+        </div>
+        <div id="biaoti2">
+
+        </div>
+        <div id="biaoti3">
+
+        </div>
+        <div id="pacture1">
+
+        </div>
+        <div id="pacture2">
+
+        </div>
+        <div id="pacture3">
+
+        </div>
+        <div id="pacture4">
+
+        </div>
+    </div>
+
 
 </div>
 </div>
-<div id="main">
-    <div id="biaoti1">
-	<form action="/index/select_stu/" class="myform" method="post">
-		<div class="oneList">
-			<label for="UserName">姓名</label>
-			<input type="text" name="UserName" id="UserName" placeholder="丁某某"/>
-		</div>
-		<div class="oneList">
-			<label for="RePassword">学年</label>
-			<select name="know" required>
-				<option value="">==请选择==</option>
-				<option value="1">搜索引擎</option>
-					<option value="2">朋友圈</option>
-					<option value="3">朋友推广</option>
-					<option value="4">广告投放</option>
-                <option value="5">所有</option>
-			</select>
-		</div>
-        		<div class="oneList">
-			<label for="RePassword">学科</label>
-			<select name="know" required>
-				<option value="">物理</option>
-				<option value="1">物理</option>
-					<option value="2">朋友圈</option>
-					<option value="3">朋友推广</option>
-					<option value="4">广告投放</option>
-                <option value="5">所有</option>
-			</select>
-		</div>
-        		<div class="oneList">
-			<label for="RePassword">了解方式</label>
-			<select name="know" required>
-				<option value="">==请选择==</option>
-				<option value="1">搜索引擎</option>
-					<option value="2">朋友圈</option>
-					<option value="3">朋友推广</option>
-					<option value="4">广告投放</option>
-                <option value="5">所有</option>
-			</select>
-		</div>
-		<div class="oneList">
-			<input type="submit" value="提交">
-		</div>
-	</form>
-    </div>
+<script defer>
+    var MyViewVar = {
 
-    <div id="table1">
-
-    </div>
-    <div id="biaoti2">
-
-    </div>
-    <div id="biaoti3">
-
-    </div>
-    <div id="pacture1">
-
-    </div>
-    <div id="pacture2">
-
-    </div>
-
-</div>
-<script>
-var MyViewVar = {
-  var_1: {{ exam_numname|safe }},
-  var_2: {{ mes_T_Score|safe }},
-};
+        var_2: {{ mes_T_Score|safe }},
+        var_1: {{ exam_numname|safe }},
+    };
 </script>
-<script type="text/javascript" src="{% static '/js/echarts.min.js' %}"></script>
-<script type="text/javascript" src="{% static '/js/jquery-3.1.1.min.js' %}"></script>
-<script type="text/javascript" src="{% static '/js/index.js' %}"></script>
-{#<script type="text/javascript" src="{% static '/js/script.js' %}"></script>#}
+<script defer type="text/javascript" src="{% static '/js/echarts.min.js' %}"></script>
+<script defer type="text/javascript" src="{% static '/js/jquery-3.1.1.min.js' %}"></script>
+<script defer type="text/javascript" src="{% static '/js/index.js' %}"></script>
+{#<script type="text/javascript" src="<sta></sta>tic '/js/script.js' %}"></script>#}
 </body>
 </html>
