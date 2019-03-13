@@ -37,8 +37,6 @@ def student_select(StudentID=15672, mes_sub_name='物理'):
         return 0,0,0
     return user_1_everysub,list_student_basisinfo,mes_sub_name
 
-
-
 if __name__ == '__main__':
     aa,bb ,cc= student_select(StudentID = 16152)
     list(aa.exam_numname)

@@ -6,30 +6,8 @@ import json
 import pandas as pd
 from django.http import HttpResponse
 
-
+from data_static import student_select
 # Create your views here.
-def home(request):
-    wheelsList = Wheel.objects.all()
-    navList = Nav.objects.all()
-    print('sssssss')
-    print(wheelsList)
-    return render(request, 'axf/home.html', {'title': '主页', 'wheelsList': wheelsList, 'navList': navList})
-
-
-def market(request):
-    return render(request, 'axf/market.html', {'title': '超时'})
-
-
-def mine(request):
-    return render(request, 'axf/mine.html', {'title': '我的'})
-
-
-def echarts(request):
-    wheelsList = Wheel.objects.all()
-    name = list(Wheel.objects.values_list('name', flat=True))
-    data = list(Wheel.objects.values_list('trackid', flat=True))
-    return render(request, 'axf/echarts1.html', {"wheelsList": wheelsList, "name": name, "data": data})
-
 
 def jsdaoru(request):
     wheelsList = Wheel.objects.all()
@@ -38,7 +16,7 @@ def jsdaoru(request):
     return render(request, 'axf/js_daoru.html', {"wheelsList": wheelsList, "name": name, "data": data})
 
 
-from data_static import student_select
+
 
 
 def index(request):
@@ -118,3 +96,25 @@ def regist(request):
                       student_info.bf_StudentID.values[0], "exam_numname": exam_numname, "mes_T_Score": mes_T_Score,
                    "student_info_name": student_info_name, "student_info_value": student_info_value,
                    "subject_list": subject_list})
+
+
+##测试专用
+def home(request):
+    List = ['自强学堂', '渲染Json到模板']
+    Dict = {'site': [1,2,3,4], 'author': [5,6,7,8]}
+    exam_numname = [3,4,5,6]
+    mes_T_Score = [1,2,3,4]
+    return render(request, 'axf/home.html', {
+            'List': json.dumps(List),
+            'Dict': json.dumps(Dict),
+        'exam_numname':exam_numname,
+        'mes_T_Score':mes_T_Score
+        })
+
+##测试专用
+def add(request):
+    List = ['自强学堂', '渲染Json到模板']
+    Dict = {'site': [1,2,3,4], 'author': [5,6,7,8]}
+    exam_numname = [3,4,5,6]
+    mes_T_Score = [1,2,3,4]
+    return render(request, 'axf/add.html')
