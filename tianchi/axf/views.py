@@ -45,13 +45,13 @@ def index(request):
     student_info_value = list(student_info.values[0])[2:]
     subject_list = ['政治', '技术', '数学', '语文', '英语', '地理', '历史', '物理', '化学', '生物', '音乐',
                     '体育', '通用技术', '美术', '1B模块总分', '信息技术']
-
+    json_data = {"series":[{'site': [1, 2, 3, 4], 'author': [5, 6, 7, 8]}],"xAxis":["a","b","c","d"],"legend":["site","auther"]}
     print(exam_numname)
     return render(request, 'axf/index.html',
                   {"StudentName": student_info.bf_Name.values[0], "mes_sub_name": mes_sub_name, "StudentID":
                       student_info.bf_StudentID.values[0], "exam_numname": exam_numname, "mes_T_Score": mes_T_Score,
                    "student_info_name": student_info_name, "student_info_value": student_info_value,
-                   "subject_list": subject_list})
+                   "subject_list": subject_list,"json_data":json.dumps(json_data)})
 
 
 def select_stu(request):

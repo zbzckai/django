@@ -11,5 +11,4 @@ urlpatterns = [
     url(r'^home/$', views.home, name='home'),
     url(r'^index/select_stu/$',views.select_stu,name = 'select_stu'),
     url(r'^index/regist/$', views.regist, name='regist'),
-
 ]
