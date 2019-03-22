@@ -5,16 +5,18 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime
-
-teacher = pd.read_csv("D:\\soft\\git\\kai\\django_1\\tianchi\\static\\data\\1_teacher.csv")
-student_info = pd.read_csv("D:\\soft\\git\\kai\\django_1\\tianchi/static/data/2_student_info.csv")
+import os
+dir_path = os.getcwd()
+dir_path
+teacher = pd.read_csv(os.path.join(dir_path,"static\\data\\1_teacher.csv"))
+student_info = pd.read_csv(os.path.join(dir_path,"static/data/2_student_info.csv"))
 student_info = student_info.fillna(0)
-kaoqin = pd.read_csv("D:\\soft\\git\\kai\\django_1\\tianchi/static/data/3_kaoqin.csv")
+kaoqin = pd.read_csv("static/data/3_kaoqin.csv")
 
-kaoqin_type = pd.read_csv("D:\\soft\\git\\kai\\django_1\\tianchi/static/data/4_kaoqintype.csv")
-chengji = pd.read_csv("D:\\soft\\git\\kai\\django_1\\tianchi/static/data/5_chengji.csv")
-exam_type = pd.read_csv("D:\\soft\\git\\kai\\django_1\\tianchi/static/data/6_exam_type.csv")
-consumption = pd.read_csv("D:\\soft\\git\\kai\\django_1\\tianchi/static/data/7_consumption.csv")
+kaoqin_type = pd.read_csv(os.path.join(dir_path,"static/data/4_kaoqintype.csv"))
+chengji = pd.read_csv(os.path.join(dir_path,"static/data/5_chengji.csv"))
+exam_type = pd.read_csv(os.path.join(dir_path,"static/data/6_exam_type.csv"))
+consumption = pd.read_csv(os.path.join(dir_path,"static/data/7_consumption.csv"))
 consumption['DealTime'] = pd.to_datetime(consumption.DealTime.apply(lambda x: x[0:9]))
 consumption['DealTime_days'] = (consumption.DealTime - datetime.strptime('2018-07-01', "%Y-%m-%d")).apply(
     lambda x: x.days)
@@ -27,7 +29,7 @@ dim_sub_info = chengji[['mes_sub_id', 'mes_sub_name']][~chengji['mes_sub_id'].du
 dim_exam_info = chengji[['exam_numname', 'exam_number']][~chengji['exam_number'].duplicated()]
 dim_class_info = student_info[['cla_Name', 'cla_id', 'cla_term']][~student_info.cla_id.duplicated()]
 dim_sub_info = dim_sub_info[~dim_sub_info.mes_sub_name.isnull()]
-dim_sub_info.to_csv('D:\\soft\\git\\kai\\django_1\\tianchi/static/data/dim_sub_info.csv')
+dim_sub_info.to_csv(os.path.join(dir_path,"static/data/dim_sub_info.csv"))
 cla_name = list(dim_class_info['cla_Name'].values)
 student_chengji['exam_name_subname'] = student_chengji['exam_numname'] + "_" + student_chengji['mes_sub_name']
 # 增加成绩的排序
