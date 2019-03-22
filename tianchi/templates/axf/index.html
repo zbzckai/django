@@ -38,25 +38,19 @@
         <div id="biaoti1">
             <form action="/index/" class="myform" method="post">
                 <div class="oneList">
-                    <label for="UserName">姓名</label>
-                    <input type="text" name="UserName" id="UserName" value={{ StudentID }} placeholder={{ StudentID }}>
+                    <label for="StudentID">学号*</label>
+                    <input type="text" name="StudentID" id="StudentID" value={{ StudentID }} placeholder={{ StudentID }}>
                 </div>
                 <div class="oneList">
-                    <label for="RePassword">学年</label>
-                    <select name="grade" required>
-                        <option value="0">==请选择==</option>
-                        <option value="1">搜索引擎</option>
-                        <option value="2">朋友圈</option>
-                        <option value="3">朋友推广</option>
-                        <option value="4">广告投放</option>
-                        <option value="5">所有</option>
-                    </select>
+                    <label for="RePassword">姓名</label>
+                    <input type="text" name="" id="UserName" value={{ StudentName }} placeholder={{ StudentName }}>
+
                 </div>
                 <div class="oneList">
-                    <label for="RePassword">学科</label>
+                    <label for="RePassword">年级</label>
                     <select name="subject" required>
-                        <option value={{ mes_sub_name }}>{{ mes_sub_name }}</option>
-                        {% for mes_name in subject_list %}
+                        <option value={{ cla_Name }}>{{ cla_Name }}</option>
+                        {% for mes_name in all_cla_name %}
                             <option value={{ mes_name }}>{{ mes_name }}</option>
                         {% endfor %}
                     </select>
@@ -119,9 +113,13 @@
 <script defer>
     var MyViewVar = {
 
-        var_2: {{ mes_T_Score|safe }},
-        var_1: {{ exam_numname|safe }},
-        ceshi:{{ json_data|safe }}
+        subject_all: {{ subject_all|safe }},
+        exam_name: {{ exam_name|safe }},
+        table_1_series_rank:{{ table_1_series_rank|safe }},
+        table_1_series:{{ table_1_series|safe }},
+        days_7: {{ days_7|safe }},
+        kind_all:{{ kind_all|safe }},
+        consumption_1_series:{{ consumption_1_series|safe }}
     };
 </script>
 <script defer type="text/javascript" src="{% static '/js/echarts.min.js' %}"></script>

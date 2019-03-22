@@ -1,17 +1,15 @@
-console.log(MyViewVar.var_1);
-// console.log(MyViewVar.ceshi);
-console.log(MyViewVar.ceshi.series[0].site);
+
 //折线图
-var line = echarts.init(document.getElementById('table1'));
+var line = echarts.init(document.getElementById('pacture1'));
 line.setOption({
     title: {
-        text: '折线图堆叠'
+        text: ''
     },
     tooltip: {
         trigger: 'axis'
     },
     legend: {
-        data:MyViewVar.ceshi.legend
+        data:MyViewVar.subject_all
     },
     grid: {
         left: '3%',
@@ -27,69 +25,120 @@ line.setOption({
     xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: MyViewVar.ceshi.xAxis
+        data: MyViewVar.exam_name
+
     },
     yAxis: {
         type: 'value'
     },
-    series: [
-        {
-            name:MyViewVar.ceshi.legend[0],
-            type:'line',
-            stack: '总量',
-            data:MyViewVar.ceshi.series[0].site
-        },
-        {
-            name:MyViewVar.ceshi.legend[1],
-            type:'line',
-            stack: '总量',
-            data:MyViewVar.ceshi.series[0].author
-        }
-    ]
-}) ;
+    series: MyViewVar.table_1_series
+});
+
 //折线图
-var line = echarts.init(document.getElementById('pacture1'));
+var line = echarts.init(document.getElementById('pacture2'));
 line.setOption({
-    color:["#32d2c9"],
     title: {
-        x: 'left',
-        text: '成绩统计',
-        textStyle: {
-            fontSize: '18',
-            color: '#4c4c4c',
-            fontWeight: 'bolder'
-        }
+        text: ''
     },
     tooltip: {
         trigger: 'axis'
     },
+    legend: {
+        data:MyViewVar.subject_all
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
     toolbox: {
-        show: true,
         feature: {
-            dataZoom: {
-                yAxisIndex: 'none'
-            },
-            dataView: {readOnly: false},
-            magicType: {type: ['line', 'bar']}
+            saveAsImage: {}
         }
     },
-    xAxis:  {
+    xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: MyViewVar.var_1,
-        axisLabel: {
-            interval:0
-        }
+        data: MyViewVar.exam_name
+
     },
     yAxis: {
         type: 'value'
     },
-    series: [
-        {
-            name:'成绩',
-            type:'line',
-            data: MyViewVar.var_2,
-            markLine: {data: [{type: 'average', name: '平均值'}]}
+    series: MyViewVar.table_1_series_rank
+});
+
+
+//折线图
+var line = echarts.init(document.getElementById('pacture3'));
+line.setOption({
+    title: {
+        text: ''
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:MyViewVar.kind_all
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
         }
-    ]
-}) ;
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: MyViewVar.days_7
+
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: MyViewVar.consumption_1_series
+});
+
+
+
+//折线图
+var line = echarts.init(document.getElementById('pacture4'));
+line.setOption({
+    title: {
+        text: ''
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:MyViewVar.subject_all
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: MyViewVar.exam_name
+
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: MyViewVar.json_data
+});
+
